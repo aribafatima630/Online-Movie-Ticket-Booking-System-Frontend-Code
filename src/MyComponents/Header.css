@@ -1,0 +1,135 @@
+.hero-section {
+    background-image: url('https://wallpaperaccess.com/full/4839516.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    width: 100%;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
+    z-index: 1;
+  }
+  
+  /* Target only navbar inside hero section */
+.hero-section .navbar {
+    background: transparent !important; /* removes white background */
+    padding: 0.5rem 2rem; /* optional: reduce padding */
+    border: none;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  /* Optional: change link colors to white */
+  .hero-section .nav-link,
+  .hero-section .navbar-brand {
+    font-size: 2rem; /* Increase this value for bigger text */
+    font-weight: bold; /* Optional: make it bold */
+    color: white !important;
+  }
+  
+  /* On hover */
+  .hero-section .nav-link:hover,
+  .hero-section .navbar-brand:hover {
+    color: #00bcd4 !important;
+  }
+  
+  /* Search box tweaks */
+  .hero-section .form-control {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+  }
+  
+  .hero-section .btn {
+    border: none;
+    background-color: #d42e00;
+    color: white;
+  }  
+  
+  .hero-content {
+    position: absolute;            /* Absolutely position it */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Center both vertically and horizontally */
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* 🔥 Make text white with shadow for better contrast */
+  .welcome-text {
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  }
+  
+  .subtitle-text {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+  }
+
+  /* Wrapper to center search bar */
+.hero-section .search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.5rem;
+    gap: 10px;
+  }
+  
+  /* Extend input width if needed */
+  .hero-section .custom-search {
+    width: 700px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0%;
+  }
+  
+  /* Optional: style the button */
+  .hero-section .search-btn {
+    border: none;
+    background-color: #d41500;
+    color: white;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .signup-btn {
+    font-weight: bold;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-btn:hover {
+    background-color: white;
+    color: #000;
+  }
+
+  .login-btn {
+    font-weight: bold;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: white;
+    color: #000;
+  }

@@ -1,0 +1,29 @@
+.theater-signup-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.theater-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theater-signup-form input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.theater-signup-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.theater-signup-form button:hover {
+  background-color: #218838;
+}

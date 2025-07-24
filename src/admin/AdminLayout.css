@@ -1,0 +1,51 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar styles */
+.admin-sidebar {
+  width: 240px;
+  background-color: #1f1f1f;
+  padding: 2rem 1.5rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.admin-sidebar h2 {
+  font-size: 1.6rem;
+  color: #ff4d4f;
+  margin-bottom: 2rem;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar li {
+  margin-bottom: 1.2rem;
+}
+
+.admin-sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.admin-sidebar a:hover {
+  color: #ff4d4f;
+  transform: translateX(5px);
+}
+
+/* Content area where Outlet renders */
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #181818;
+}

@@ -1,0 +1,81 @@
+.admin-dashboard {
+  color: white;
+  padding: 2rem;
+}
+
+.dashboard-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rem;
+  margin-top: 6rem;
+  margin-left: 4rem;
+}
+
+.dashboard-card {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  background-color: #292929;
+  transform: translateY(-4px);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* .dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+} */
+
+/*
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.auth-btn:hover {
+  background-color: #0056b3;
+} */

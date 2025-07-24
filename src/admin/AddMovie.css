@@ -1,0 +1,41 @@
+.add-movie-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-movie-form input,
+.add-movie-form textarea,
+.add-movie-form select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.cast-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cast-inputs input {
+  flex: 1;
+}
+
+.add-movie-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-movie-form button:hover {
+  background-color: #0056b3;
+}

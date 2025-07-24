@@ -1,0 +1,115 @@
+* BookingPage.css */
+
+body {
+  background-color: #121212;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.booking-container {
+  padding: 2.5rem;
+  color: #f0f0f0;
+  max-width: 700px;
+  margin: 3rem auto;
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #ffcc00;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+label {
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #ddd;
+}
+
+input[type="number"] {
+  width: 70px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+  outline: none;
+  margin-left: 10px;
+}
+
+input[type="radio"] {
+  accent-color: #ff4444;
+}
+
+.booking-controls {
+  margin: 1.5rem 0;
+}
+
+h3 {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #00ffcc;
+}
+
+.book-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff4444, #ff8800);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 136, 0, 0.6);
+}
+
+.booking-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .booking-poster img {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .booking-page {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .booking-poster img {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
