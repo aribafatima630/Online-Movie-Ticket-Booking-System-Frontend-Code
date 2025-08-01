@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import './MovieDetail.css';
+import BASE_URL from '../config';
 
 export default function MovieDetail() {
     const { movieName } = useParams();
@@ -9,7 +10,7 @@ export default function MovieDetail() {
     const [movieData, setMovieData] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/shows`)
+        fetch(`${BASE_URL}/api/shows`)
             .then(res => res.json())
             .then(data => {
                 const found = data.find(show => show.movie.movieName.toLowerCase() === movieName.toLowerCase());

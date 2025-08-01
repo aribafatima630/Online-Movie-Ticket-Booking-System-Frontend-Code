@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./SearchResults.css";
+import BASE_URL from "../config";
 
 export default function SearchResults() {
     const { query } = useParams();
@@ -8,7 +9,7 @@ export default function SearchResults() {
     const [results, setResults] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/shows`)
+        fetch(`${BASE_URL}/api/shows`)
             .then(res => res.json())
             .then(data => {
                 const filtered = data.filter(show =>

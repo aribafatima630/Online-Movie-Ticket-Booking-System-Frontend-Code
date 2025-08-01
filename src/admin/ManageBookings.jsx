@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './ManageBookings.css';
+import BASE_URL from "../config";
 
 export default function ManageBookings() {
   const [bookings, setBookings] = useState([]);
@@ -10,7 +11,7 @@ export default function ManageBookings() {
     const theaterName = user?.theater?.theaterName?.trim();
     if (theaterName) {
       axios
-        .get(`http://localhost:8080/api/ticket/byTheater?theaterName=${encodeURIComponent(theaterName)}`)
+        .get(`${BASE_URL}/api/ticket/byTheater?theaterName=${encodeURIComponent(theaterName)}`)
         .then((res) => setBookings(res.data))
         .catch((err) => console.error("Failed to load bookings", err));
     }

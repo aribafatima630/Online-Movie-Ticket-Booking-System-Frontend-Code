@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AdminSignup.css';
+import BASE_URL from '../config';
 
 export default function AdminSignup() {
   const [user, setUser] = useState({
@@ -15,7 +16,7 @@ export default function AdminSignup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:8080/api/admin/signup', {
+      const res = await fetch(`${BASE_URL}/api/admin/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

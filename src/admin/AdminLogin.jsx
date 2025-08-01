@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './AdminLogin.css';
+import BASE_URL from '../config';
 
 export default function AdminLogin() {
   const [credentials, setCredentials] = useState({
@@ -18,7 +19,7 @@ export default function AdminLogin() {
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await axios.post('http://localhost:8080/api/auth/login', credentials);
+    const response = await axios.post(`${BASE_URL}/api/auth/login`, credentials);
     const { data, status } = response;
 
     if (status === 200) {

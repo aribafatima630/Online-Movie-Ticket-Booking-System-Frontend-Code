@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'; // optional CSS
+import BASE_URL from "../config";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export default function Login() {
     e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:8080/api/auth/login", {
+            const response = await fetch(`${BASE_URL}/api/auth/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -21,8 +22,8 @@ export default function Login() {
             });
 
             if (response.ok) {
-                const data = await response.json(); // ✅ Only call this once
-                console.log("Login response data:", data); // ✅ Will log user object
+                const data = await response.json(); //  Only call this once
+                console.log("Login response data:", data); //  Will log user object
 
                 // Save user object directly
                 localStorage.setItem("user", JSON.stringify(data));

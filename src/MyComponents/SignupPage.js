@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SignupPage.css';
+import BASE_URL from '../config';
 
 export default function SignupPage() {
   const [user, setUser] = useState({
@@ -15,7 +16,7 @@ export default function SignupPage() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:8080/api/user', {
+      const res = await fetch(`${BASE_URL}/api/user`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

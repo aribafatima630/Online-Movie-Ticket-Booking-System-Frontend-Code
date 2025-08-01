@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './TheaterSignup.css';
+import BASE_URL from '../config';
 
 export default function TheaterSignup() {
   const [theater, setTheater] = useState({
@@ -34,7 +35,7 @@ export default function TheaterSignup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/theaters', theater);
+      await axios.post(`${BASE_URL}/api/theaters`, theater);
       alert('Theater registered successfully!');
       // Optional: redirect to login page or dashboard
     } catch (error) {

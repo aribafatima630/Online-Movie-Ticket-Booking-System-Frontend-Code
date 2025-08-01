@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './BookingPage.css';
+import BASE_URL from '../config';
 
 export default function BookingPage() {
     const { movieId } = useParams();
@@ -10,7 +11,7 @@ export default function BookingPage() {
 
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/shows')
+        fetch(`${BASE_URL}/api/shows`)
             .then(res => res.json())
             .then(data => {
                 const found = data.find(show => show.movie.movieId == movieId);
@@ -42,7 +43,7 @@ export default function BookingPage() {
         bookingTime: new Date().toISOString()
     };
 
-    fetch("http://localhost:8080/api/ticket", {
+    fetch(`${BASE_URL}/api/ticket`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

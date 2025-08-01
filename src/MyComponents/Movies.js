@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
+import BASE_URL from '../config';
 
 export default function Movies() {
     const [movies, setMovies] = useState([]);
@@ -16,7 +17,7 @@ export default function Movies() {
 
     // Fetch movie data from API
     useEffect(() => {
-        fetch('http://localhost:8080/api/shows')
+        fetch(`${BASE_URL}/api/shows`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

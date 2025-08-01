@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ManageShows.css';
+import BASE_URL from '../config';
 
 export default function ManageShows() {
   const theater = JSON.parse(localStorage.getItem("user"))?.theater;
@@ -14,14 +15,14 @@ export default function ManageShows() {
   const fetchScreensAndShows = async () => {
     try {
       const screenRes = await axios.get(
-        `http://localhost:8080/api/theaters/screens?theaterId=${theater.theaterId}`
+        `${BASE_URL}/api/theaters/screens?theaterId=${theater.theaterId}`
       );
       const screenList = screenRes.data;
       setScreens(screenList);
 
       const showPromises = screenList.map((screen) =>
         axios
-          .get(`http://localhost:8080/api/shows/byScreenId?screenId=${screen.screenId}`)
+          .get(`${BASE_URL}/api/shows/byScreenId?screenId=${screen.screenId}`)
           .then(res => res.data)
           .catch(() => null)
       );
@@ -39,7 +40,7 @@ export default function ManageShows() {
   const handleDelete = async (showId) => {
     if (window.confirm("Are you sure you want to delete this show?")) {
       try {
-        await axios.delete(`http://localhost:8080/api/shows?id=${showId}`);
+        await axios.delete(`${BASE_URL}/api/shows?id=${showId}`);
         alert("Show deleted successfully!");
         fetchScreensAndShows();
       } catch (error) {

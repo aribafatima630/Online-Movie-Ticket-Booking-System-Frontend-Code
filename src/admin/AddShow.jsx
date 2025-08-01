@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './AddShow.css';
+import BASE_URL from '../config';
 
 export default function AddShow() {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -16,12 +17,12 @@ export default function AddShow() {
 
   useEffect(() => {
     // Load movies
-    axios.get('http://localhost:8080/api/movies')
+    axios.get(`${BASE_URL}/api/movies`)
       .then(res => setMovies(res.data))
       .catch(err => console.error('Error fetching movies:', err));
 
     // Load screens for current theater
-    axios.get(`http://localhost:8080/api/theaters/screens?theaterId=${theaterId}`)
+    axios.get(`${BASE_URL}/api/theaters/screens?theaterId=${theaterId}`)
       .then(res => setScreens(res.data))
       .catch(err => console.error('Error fetching screens:', err));
   }, [theaterId]);
@@ -60,7 +61,7 @@ export default function AddShow() {
 
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/shows?screenId=${formData.screenId}`,
+        `${BASE_URL}/api/shows?screenId=${formData.screenId}`,
         payload
       );
       alert('Show added successfully!');

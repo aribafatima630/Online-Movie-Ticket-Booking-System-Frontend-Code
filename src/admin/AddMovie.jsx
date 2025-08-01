@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './AddMovie.css';
+import BASE_URL from '../config';
 
 export default function AddMovie(){
 
@@ -44,7 +45,7 @@ export default function AddMovie(){
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/movies', movie);
+      await axios.post(`${BASE_URL}/api/movies`, movie);
       alert('Movie added successfully!');
       setMovie({
         movieName: '',

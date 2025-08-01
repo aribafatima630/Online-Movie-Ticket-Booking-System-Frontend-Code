@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ManageTheater.css';
+import BASE_URL from '../config';
 
 export default function ManageTheater() {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -16,7 +17,7 @@ export default function ManageTheater() {
   useEffect(() => {
     const fetchScreens = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/theaters/screens?theaterId=${theater.theaterId}`);
+        const res = await axios.get(`${BASE_URL}/api/theaters/screens?theaterId=${theater.theaterId}`);
         setScreens(res.data);
       } catch (err) {
         console.error('Error fetching screens:', err);
@@ -44,7 +45,7 @@ export default function ManageTheater() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:8080/api/theaters?id=${theater.theaterId}`, theater);
+      const res = await axios.put(`${BASE_URL}/api/theaters?id=${theater.theaterId}`, theater);
       alert('Theater updated successfully!');
       localStorage.setItem('user', JSON.stringify({ ...user, theater: res.data }));
     } catch (error) {
@@ -61,7 +62,7 @@ export default function ManageTheater() {
   const handleAddScreen = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8080/api/theaters/screens?id=${theater.theaterId}`, newScreen);
+      const res = await axios.post(`${BASE_URL}/api/theaters/screens?id=${theater.theaterId}`, newScreen);
       setScreens([...screens, res.data]);
       setNewScreen({ screenName: '', totalSeat: '' });
       alert('Screen added successfully!');
